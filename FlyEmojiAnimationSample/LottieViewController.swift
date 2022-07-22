@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import Lottie
 
 class LottieViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
-        title = "Animation Like"
+        title = "Lottie"
     }
     
     required init?(coder: NSCoder) {

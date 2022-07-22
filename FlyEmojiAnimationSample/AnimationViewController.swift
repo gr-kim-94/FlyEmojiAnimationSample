@@ -10,7 +10,7 @@ import UIKit
 class AnimationViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
-        title = "Animation Like"
+        title = "Animation"
     }
     
     required init?(coder: NSCoder) {

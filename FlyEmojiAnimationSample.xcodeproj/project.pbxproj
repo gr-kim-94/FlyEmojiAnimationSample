@@ -15,6 +15,7 @@
 		C8DC91F5288A6696002FFBC9 /* lottie_hello.json in Resources */ = {isa = PBXBuildFile; fileRef = C8DC91F4288A6696002FFBC9 /* lottie_hello.json */; };
 		C8DC91F8288A6754002FFBC9 /* LottieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DC91F7288A6754002FFBC9 /* LottieViewController.swift */; };
 		C8DC91FA288A6789002FFBC9 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DC91F9288A6789002FFBC9 /* AnimationViewController.swift */; };
+		C8DC91FD288A6992002FFBC9 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = C8DC91FC288A6992002FFBC9 /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8DC91FD288A6992002FFBC9 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +66,7 @@
 				C8DC91F7288A6754002FFBC9 /* LottieViewController.swift */,
 				C8DC91F9288A6789002FFBC9 /* AnimationViewController.swift */,
 				C8DC91F2288A42C0002FFBC9 /* Assets */,
-				C8DC91F6288A66CD002FFBC9 /* Supporting Files */,
+				C8DC91FE288A69DE002FFBC9 /* Supporting Files */,
 			);
 			path = FlyEmojiAnimationSample;
 			sourceTree = "<group>";
@@ -86,7 +88,7 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
-		C8DC91F6288A66CD002FFBC9 /* Supporting Files */ = {
+		C8DC91FE288A69DE002FFBC9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				C8DC91DE288A419B002FFBC9 /* AppDelegate.swift */,
@@ -94,7 +96,7 @@
 				C8DC91E9288A41A3002FFBC9 /* LaunchScreen.storyboard */,
 				C8DC91EC288A41A3002FFBC9 /* Info.plist */,
 			);
-			path = "Supporting Files";
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,6 +115,9 @@
 			dependencies = (
 			);
 			name = FlyEmojiAnimationSample;
+			packageProductDependencies = (
+				C8DC91FC288A6992002FFBC9 /* Lottie */,
+			);
 			productName = FlyEmojiAnimationSample;
 			productReference = C8DC91DB288A419B002FFBC9 /* FlyEmojiAnimationSample.app */;
 			productType = "com.apple.product-type.application";
@@ -141,6 +146,9 @@
 				Base,
 			);
 			mainGroup = C8DC91D2288A419B002FFBC9;
+			packageReferences = (
+				C8DC91FB288A6992002FFBC9 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = C8DC91DC288A419B002FFBC9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -315,7 +323,6 @@
 				INFOPLIST_FILE = FlyEmojiAnimationSample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -342,7 +349,6 @@
 				INFOPLIST_FILE = FlyEmojiAnimationSample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -380,6 +386,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C8DC91FB288A6992002FFBC9 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C8DC91FC288A6992002FFBC9 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C8DC91FB288A6992002FFBC9 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C8DC91D3288A419B002FFBC9 /* Project object */;
 }

@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		C8DC91DF288A419B002FFBC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DC91DE288A419B002FFBC9 /* AppDelegate.swift */; };
 		C8DC91E1288A419B002FFBC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DC91E0288A419B002FFBC9 /* SceneDelegate.swift */; };
-		C8DC91E3288A419B002FFBC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DC91E2288A419B002FFBC9 /* ViewController.swift */; };
-		C8DC91E6288A419B002FFBC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8DC91E4288A419B002FFBC9 /* Main.storyboard */; };
+		C8DC91E3288A419B002FFBC9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DC91E2288A419B002FFBC9 /* MainViewController.swift */; };
 		C8DC91E8288A41A3002FFBC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8DC91E7288A41A3002FFBC9 /* Assets.xcassets */; };
 		C8DC91EB288A41A3002FFBC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8DC91E9288A41A3002FFBC9 /* LaunchScreen.storyboard */; };
+		C8DC91F5288A6696002FFBC9 /* lottie_hello.json in Resources */ = {isa = PBXBuildFile; fileRef = C8DC91F4288A6696002FFBC9 /* lottie_hello.json */; };
+		C8DC91F8288A6754002FFBC9 /* LottieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DC91F7288A6754002FFBC9 /* LottieViewController.swift */; };
+		C8DC91FA288A6789002FFBC9 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DC91F9288A6789002FFBC9 /* AnimationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C8DC91DB288A419B002FFBC9 /* FlyEmojiAnimationSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlyEmojiAnimationSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8DC91DE288A419B002FFBC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8DC91E0288A419B002FFBC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C8DC91E2288A419B002FFBC9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C8DC91E5288A419B002FFBC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C8DC91E2288A419B002FFBC9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C8DC91E7288A41A3002FFBC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8DC91EA288A41A3002FFBC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8DC91EC288A41A3002FFBC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8DC91F4288A6696002FFBC9 /* lottie_hello.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lottie_hello.json; sourceTree = "<group>"; };
+		C8DC91F7288A6754002FFBC9 /* LottieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieViewController.swift; sourceTree = "<group>"; };
+		C8DC91F9288A6789002FFBC9 /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,41 @@
 		C8DC91DD288A419B002FFBC9 /* FlyEmojiAnimationSample */ = {
 			isa = PBXGroup;
 			children = (
+				C8DC91E2288A419B002FFBC9 /* MainViewController.swift */,
+				C8DC91F7288A6754002FFBC9 /* LottieViewController.swift */,
+				C8DC91F9288A6789002FFBC9 /* AnimationViewController.swift */,
+				C8DC91F2288A42C0002FFBC9 /* Assets */,
+				C8DC91F6288A66CD002FFBC9 /* Supporting Files */,
+			);
+			path = FlyEmojiAnimationSample;
+			sourceTree = "<group>";
+		};
+		C8DC91F2288A42C0002FFBC9 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C8DC91F3288A667F002FFBC9 /* Animations */,
+				C8DC91E7288A41A3002FFBC9 /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		C8DC91F3288A667F002FFBC9 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				C8DC91F4288A6696002FFBC9 /* lottie_hello.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		C8DC91F6288A66CD002FFBC9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				C8DC91DE288A419B002FFBC9 /* AppDelegate.swift */,
 				C8DC91E0288A419B002FFBC9 /* SceneDelegate.swift */,
-				C8DC91E2288A419B002FFBC9 /* ViewController.swift */,
-				C8DC91E4288A419B002FFBC9 /* Main.storyboard */,
-				C8DC91E7288A41A3002FFBC9 /* Assets.xcassets */,
 				C8DC91E9288A41A3002FFBC9 /* LaunchScreen.storyboard */,
 				C8DC91EC288A41A3002FFBC9 /* Info.plist */,
 			);
-			path = FlyEmojiAnimationSample;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +155,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8DC91F5288A6696002FFBC9 /* lottie_hello.json in Resources */,
 				C8DC91EB288A41A3002FFBC9 /* LaunchScreen.storyboard in Resources */,
 				C8DC91E8288A41A3002FFBC9 /* Assets.xcassets in Resources */,
-				C8DC91E6288A419B002FFBC9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +168,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8DC91E3288A419B002FFBC9 /* ViewController.swift in Sources */,
+				C8DC91E3288A419B002FFBC9 /* MainViewController.swift in Sources */,
+				C8DC91F8288A6754002FFBC9 /* LottieViewController.swift in Sources */,
+				C8DC91FA288A6789002FFBC9 /* AnimationViewController.swift in Sources */,
 				C8DC91DF288A419B002FFBC9 /* AppDelegate.swift in Sources */,
 				C8DC91E1288A419B002FFBC9 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +179,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C8DC91E4288A419B002FFBC9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C8DC91E5288A419B002FFBC9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C8DC91E9288A41A3002FFBC9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

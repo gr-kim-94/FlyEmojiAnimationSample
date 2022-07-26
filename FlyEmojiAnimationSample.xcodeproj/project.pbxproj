@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C8836FAC288F8802002B2ABD /* VariousAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8836FAB288F8802002B2ABD /* VariousAnimationViewController.swift */; };
 		C8DC91DF288A419B002FFBC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DC91DE288A419B002FFBC9 /* AppDelegate.swift */; };
 		C8DC91E1288A419B002FFBC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DC91E0288A419B002FFBC9 /* SceneDelegate.swift */; };
 		C8DC91E3288A419B002FFBC9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8DC91E2288A419B002FFBC9 /* MainViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C8836FAB288F8802002B2ABD /* VariousAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariousAnimationViewController.swift; sourceTree = "<group>"; };
 		C8DC91DB288A419B002FFBC9 /* FlyEmojiAnimationSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlyEmojiAnimationSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8DC91DE288A419B002FFBC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8DC91E0288A419B002FFBC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				C8DC91E2288A419B002FFBC9 /* MainViewController.swift */,
 				C8DC91F7288A6754002FFBC9 /* LottieViewController.swift */,
 				C8DC91F9288A6789002FFBC9 /* AnimationViewController.swift */,
+				C8836FAB288F8802002B2ABD /* VariousAnimationViewController.swift */,
 				C8DC91F2288A42C0002FFBC9 /* Assets */,
 				C8DC91FE288A69DE002FFBC9 /* Supporting Files */,
 			);
@@ -176,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8836FAC288F8802002B2ABD /* VariousAnimationViewController.swift in Sources */,
 				C8DC91E3288A419B002FFBC9 /* MainViewController.swift in Sources */,
 				C8DC91F8288A6754002FFBC9 /* LottieViewController.swift in Sources */,
 				C8DC91FA288A6789002FFBC9 /* AnimationViewController.swift in Sources */,

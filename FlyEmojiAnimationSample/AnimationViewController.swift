@@ -8,6 +8,8 @@
 import UIKit
 
 class AnimationViewController: UIViewController {
+    var stackView: UIStackView = UIStackView()
+    
     init() {
         super.init(nibName: nil, bundle: nil)
         title = "Animation"
@@ -21,55 +23,81 @@ class AnimationViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showAnimation))
-        self.view.addGestureRecognizer(tapGesture)
+        self.view.addSubview(self.stackView)
+        self.stackView.axis = .horizontal
+        self.stackView.distribution = .fillEqually
+        self.stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            self.stackView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            self.stackView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
+            self.stackView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
+            self.stackView.heightAnchor.constraint(equalToConstant: 40)
+        ])
+        
+        self.defaultSetting()
     }
     
-    @objc func showAnimation() {
+    private func defaultSetting() {
+        let noneButton = UIButton()
+        noneButton.setTitleColor(.black, for: .normal)
+        noneButton.setTitle("none", for: .normal)
+        noneButton.addAction(UIAction(handler: { action in
+            self.showAnimation(.none)
+        }), for: .touchUpInside)
+        self.stackView.addArrangedSubview(noneButton)
+        
+        let randomButton = UIButton()
+        randomButton.setTitleColor(.black, for: .normal)
+        randomButton.setTitle("random", for: .normal)
+        randomButton.addAction(UIAction(handler: { action in
+            self.showAnimation(.random)
+        }), for: .touchUpInside)
+        self.stackView.addArrangedSubview(randomButton)
+        
+        let awayButton = UIButton()
+        awayButton.setTitleColor(.black, for: .normal)
+        awayButton.setTitle("away", for: .normal)
+        awayButton.addAction(UIAction(handler: { action in
+            self.showAnimation(.away)
+        }), for: .touchUpInside)
+        self.stackView.addArrangedSubview(awayButton)
+        
+        let scaleButton1 = UIButton()
+        scaleButton1.setTitleColor(.black, for: .normal)
+        scaleButton1.setTitle("scale1", for: .normal)
+        scaleButton1.addAction(UIAction(handler: { action in
+            self.showAnimation(.scale1)
+        }), for: .touchUpInside)
+        self.stackView.addArrangedSubview(scaleButton1)
+        
+        // test
+        let scaleButton2 = UIButton()
+        scaleButton2.setTitleColor(.black, for: .normal)
+        scaleButton2.setTitle("scale2", for: .normal)
+        scaleButton2.addAction(UIAction(handler: { action in
+            self.showAnimation(.scale2)
+        }), for: .touchUpInside)
+        self.stackView.addArrangedSubview(scaleButton2)
+    }
+    
+    // MARK: - Animation
+    private let delayMin: CGFloat = 0.1
+    private let delayMax: CGFloat = 1.0
+    
+    func showAnimation(_ style: FlyStyle) {
         (0...8).forEach { _ in
-            addAnimationView()
+            // 등장 시간 : 0.1 ~ 1.0
+            DispatchQueue.main.asyncAfter(deadline: .now() + CGFloat.random(in: delayMin...delayMax)) {
+                // Add Reaction Item View
+                let imageView = FlyImageView(name: "hello")
+                imageView.style = style
+                self.view.addSubview(imageView)
+                
+                imageView.animateInView(view: self.view) { finished in
+                    // End Reaction Animation
+                }
+            }
         }
-    }
-    
-    func addAnimationView() {
-        let imageView = UIImageView(image: UIImage(named: "hello"))
-        imageView.contentMode = .scaleAspectFit
-        imageView.animationRepeatCount = 1
-        imageView.animationDuration = 3
-        
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        let randomSize = 30 + drand48() * 10
-        imageView.frame = CGRect(x: 0, y: 0, width: randomSize, height: randomSize)
-        imageView.alpha = drand48()
-        
-        let animation = CAKeyframeAnimation(keyPath: "position")
-        animation.path = upCurvedPath(imageView: imageView).cgPath
-        animation.duration = 2 + drand48() * 3
-        animation.fillMode = .forwards
-        animation.isRemovedOnCompletion = false
-        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
-        
-        imageView.layer.add(animation, forKey: nil)
-        
-        self.view.addSubview(imageView)
-    }
-    
-    func upCurvedPath(imageView: UIImageView) -> UIBezierPath {
-        let path = UIBezierPath()
-        
-        let randomX: CGFloat = CGFloat(arc4random_uniform(UInt32(self.view.frame.size.width)))
-        
-        let startPoint = CGPoint(x: randomX, y: self.view.frame.size.height)
-        let endPoint = CGPoint(x: randomX, y: -imageView.frame.size.height)
-        
-        path.move(to: startPoint)
-        
-        let randomXShift = randomX + drand48() * 300
-        let cp1 = CGPoint(x: randomX - randomXShift, y: self.view.frame.size.height / 3)
-        let cp2 = CGPoint(x: randomX + randomXShift, y: (self.view.frame.size.height * 2) / 3)
-        path.addCurve(to: endPoint, controlPoint1: cp1, controlPoint2: cp2)
-        
-        return path
     }
 }

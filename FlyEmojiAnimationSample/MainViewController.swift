@@ -27,8 +27,7 @@ class MainViewController: UITabBarController {
         
         viewControllers = [
             UINavigationController(rootViewController:  LottieViewController()),
-            UINavigationController(rootViewController:  AnimationViewController()),
-            UINavigationController(rootViewController:  VariousAnimationViewController())
+            UINavigationController(rootViewController:  AnimationViewController())
         ]
     }
 
